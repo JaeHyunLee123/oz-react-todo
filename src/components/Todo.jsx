@@ -52,16 +52,29 @@ export default function Todo({ todo, setTodos }) {
 
   return (
     <div className="todo-box">
-      <button onClick={onCompleteButtonClick}>✅</button>
+      <button className="todo-box__button" onClick={onCompleteButtonClick}>
+        ✅
+      </button>
       {isFixing ? (
-        <input defaultValue={todo.todo} ref={inputRef} />
+        <input
+          className="todo-box__input"
+          defaultValue={todo.todo}
+          ref={inputRef}
+        />
       ) : (
-        <span>{todo.todo}</span>
+        <span
+          className={`todo-box__todo ${todo.isComplete ? "center-line" : ""}`}
+        >
+          {todo.todo}
+        </span>
       )}
 
-      {todo.isComplete ? "end" : ""}
-      <button onClick={onFixButtonClick}>🔧</button>
-      <button onClick={onDeleteButtonClick}>❌</button>
+      <button className="todo-box__button" onClick={onFixButtonClick}>
+        🔧
+      </button>
+      <button className="todo-box__button" onClick={onDeleteButtonClick}>
+        ❌
+      </button>
     </div>
   );
 }

@@ -1,3 +1,54 @@
 .todo-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.todo-box__button {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  font-size: 1.3rem;
+}
+
+.todo-box__button:hover {
+  cursor: pointer;
+}
+
+.todo-box__todo {
   color: whitesmoke;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.center-line {
+  text-decoration: line-through;
+}
+
+.todo-box__input {
+  color: whitesmoke;
+  border: none;
+  border-bottom: 2px solid whitesmoke;
+  background-color: transparent;
+  font-size: 2rem;
+
+  width: 220px;
+}
+
+.todo-box__input:focus {
+  outline: none;
+}
+
+@media (max-width: 400px) {
+  .todo-box__input {
+    font-size: 1.5rem;
+  }
+  .todo-box__todo {
+    font-size: 1.5rem;
+  }
+  .todo-box__button {
+    font-size: 1rem;
+  }
 }

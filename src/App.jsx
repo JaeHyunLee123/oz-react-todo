@@ -16,7 +16,7 @@ function App() {
         height: "100vh", // full viewport height
       }}
     >
-      <main>
+      <main className="main">
         <CurrentTime />
         <TodoList />
       </main>

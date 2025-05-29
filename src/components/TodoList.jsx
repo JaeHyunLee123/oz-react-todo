@@ -35,17 +35,19 @@ export default function TodoList() {
   };
 
   return (
-    <div>
+    <div className="todo-list-box">
       {todos.length > 0 ? (
         todos.map((todo) => (
           <Todo todo={todo} setTodos={setTodos} key={todo.id} />
         ))
       ) : (
-        <span>Add todo!</span>
+        <span className="todo-list-box__text">Add todo!</span>
       )}
-      <form onSubmit={onTodoSubmit}>
-        <input placeholder="Add Todo" ref={inputRef} />
-        <button type="submit">추가</button>
+      <form className="todo-list-form" onSubmit={onTodoSubmit}>
+        <input className="todo-list-form__input" ref={inputRef} />
+        <button className="todo-list-form__button" type="submit">
+          👍
+        </button>
       </form>
     </div>
   );
