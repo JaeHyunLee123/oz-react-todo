@@ -2,6 +2,7 @@ import backgroundImage from "./libs/background";
 import "./App.css";
 import Footer from "./components/Footer";
 import CurrentTime from "./components/CurrentTime";
+import TodoList from "./components/TodoList";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
     >
       <main>
         <CurrentTime />
+        <TodoList />
       </main>
       <Footer />
     </div>
