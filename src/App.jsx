@@ -1,5 +1,6 @@
 import backgroundImage from "./libs/background";
 import "./App.css";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -11,10 +12,10 @@ function App() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         height: "100vh", // full viewport height
-        width: "100vw", // full viewport width
       }}
     >
-      <main></main>
+      <main>main</main>
+      <Footer />
     </div>
   );
 }

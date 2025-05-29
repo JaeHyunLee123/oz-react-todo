@@ -1,0 +1,35 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0px;
+}
+
+.quote-box {
+  display: flex;
+  flex-direction: column;
+  color: whitesmoke;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.quote-box__quote {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.quote-box__author {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+@media (max-width: 400px) {
+  .quote-box__quote {
+    font-size: 1.2rem;
+  }
+
+  .quote-box__author {
+    font-size: 1rem;
+  }
+}
