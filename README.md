@@ -5,9 +5,7 @@
 1. Mock up
 
    1. 배경 -> 랜덤 사진
-   1. 시간
-      1. 현재 시간
-      1. 스톱 워치
+   1. 현재 시간
    1. todo
       1. Todo Component
    1. 명언
@@ -17,9 +15,9 @@
 
    1. 랜덤배경화면
 
-1. 스톱 워치
+1. 현재 시간
 
-   1. useInterval custom hook
+   1. useInterval
 
 1. Todo
 

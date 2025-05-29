@@ -1,6 +1,7 @@
 import backgroundImage from "./libs/background";
 import "./App.css";
 import Footer from "./components/Footer";
+import CurrentTime from "./components/CurrentTime";
 
 function App() {
   return (
@@ -14,7 +15,9 @@ function App() {
         height: "100vh", // full viewport height
       }}
     >
-      <main>main</main>
+      <main>
+        <CurrentTime />
+      </main>
       <Footer />
     </div>
   );
