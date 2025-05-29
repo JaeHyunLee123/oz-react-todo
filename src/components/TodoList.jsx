@@ -4,42 +4,18 @@ import Todo from "./Todo";
 
 /** @typedef {import("../type").Todo} Todo*/
 
-/** @type {Todo[]} */
-const FAKE_TODOS = [
-  {
-    id: 1,
-    todo: "test1",
-    isComplete: false,
-  },
-  {
-    id: 2,
-    todo: "test2",
-    isComplete: false,
-  },
-  {
-    id: 3,
-    todo: "test3",
-    isComplete: false,
-  },
-  {
-    id: 4,
-    todo: "test4",
-    isComplete: false,
-  },
-  {
-    id: 5,
-    todo: "test5",
-    isComplete: false,
-  },
-];
+const TODOS_KEY = "todos";
+
+const savedToDos = localStorage.getItem(TODOS_KEY);
+const initialTodos = savedToDos ? JSON.parse(savedToDos) : [];
 
 export default function TodoList() {
   /** @type {[Todo[], React.Dispatch<React.SetStateAction<Todo[]>>]} */
-  const [todos, setTodos] = useState([]);
+  const [todos, setTodos] = useState(initialTodos);
 
   useEffect(() => {
-    setTodos(FAKE_TODOS);
-  }, []);
+    localStorage.setItem(TODOS_KEY, JSON.stringify(todos));
+  }, [todos]);
 
   const inputRef = useRef(null);
 
@@ -60,9 +36,13 @@ export default function TodoList() {
 
   return (
     <div>
-      {todos.map((todo) => (
-        <Todo todo={todo} setTodos={setTodos} key={todo.id} />
-      ))}
+      {todos.length > 0 ? (
+        todos.map((todo) => (
+          <Todo todo={todo} setTodos={setTodos} key={todo.id} />
+        ))
+      ) : (
+        <span>Add todo!</span>
+      )}
       <form onSubmit={onTodoSubmit}>
         <input placeholder="Add Todo" ref={inputRef} />
         <button type="submit">추가</button>
